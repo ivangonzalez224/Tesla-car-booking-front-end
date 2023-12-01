@@ -1,6 +1,5 @@
 import React from 'react';
 import { Routes, Route } from 'react-router-dom';
-// import './App.css';
 import Login from './components/Login';
 import Register from './components/Register';
 import RequireAuth from './components/RequireAuth';
@@ -11,10 +10,8 @@ import DeleteCar from './components/cars/DeleteCar';
 import Reservations from './components/reservations/Reservations';
 import CarDetails from './components/cars/CarDetails';
 
-const App = () => (
-  // <div className="container-fluid main-height ">
-  // <main className="col">
-  <>
+function App() {
+  return (
     <Routes>
       <Route path="/login" element={<Login />} />
       <Route path="/register" element={<Register />} />
@@ -26,9 +23,7 @@ const App = () => (
         <Route path="/reservations" element={<Reservations />} />
       </Route>
     </Routes>
-  </>
-  // </main>
-  // </div>
-);
+  );
+}
 
 export default App;
