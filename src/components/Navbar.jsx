@@ -22,23 +22,26 @@ function Navbar() {
     setSidebarVisible(false);
   };
 
-  const handleLogout = () => {
+  const handleLogout = async () => {
     setAuth({});
     localStorage.removeItem('Token');
-    if (authToken) {
-      try {
-        axios.delete('http://localhost:3000/auth/logout', {
+
+    try {
+      if (authToken) {
+        await axios.delete('http://localhost:3000/auth/logout', {
           headers: {
             Authorization: authToken,
             'Content-Type': 'application/json',
           },
         });
         toast.success('Logout Successfully');
-      } catch (err) {
-        toast.error('Opps😥 failed To logout');
-        throw Error(err);
       }
+    } catch (err) {
+      // Display an error message to the user
+      toast.error('Oops! Failed to logout');
     }
+
+    // Regardless of success or failure, navigate to the login page
     navigate('/login');
   };
 
@@ -60,13 +63,13 @@ function Navbar() {
             disabled={!authToken}
             onClick={handleLogout}
             type="button"
-            className="list-group-item list-group-item-action "
+            className="list-group-item list-group-item-action"
           >
             Log Out
           </button>
         </div>
         <div className="license-container">
-          <p className="license">&copy; 2023 Test Drive Zone</p>
+          <p className="license">&copy; 2023 Tesla Cars booking</p>
           <p className="license">All rights reserved.</p>
         </div>
       </div>
