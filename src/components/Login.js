@@ -1,5 +1,4 @@
 /* eslint-disable */
-
 import React, {
   useEffect, useState, useRef, useContext,
 } from 'react';
@@ -9,7 +8,7 @@ import AuthContext from '../context/AuthProvider';
 
 const LOGIN_URL = 'auth/login';
 
-const Login = () => {
+function Login() {
   const { setAuth } = useContext(AuthContext);
 
   const userRef = useRef();
@@ -61,7 +60,6 @@ const Login = () => {
         'Token',
         JSON.stringify({ authToken, username, id }),
       );
-      // clean the input field
       setEmail('');
       setPwd('');
       navigate(from, { replace: true });
@@ -113,15 +111,15 @@ const Login = () => {
           Sign In
         </button>
       </form>
-      <p>
+      <p className="sign-in-p">
         Need an Account?
         <br />
-        <Link to="/" className="text-light">
+        <Link to="/register" className="text-light">
           <span className="text-login">Sign Up</span>
         </Link>
       </p>
     </section>
   );
-};
+}
 
 export default Login;
