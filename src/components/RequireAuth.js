@@ -1,6 +1,6 @@
 import { useLocation, Navigate, Outlet } from 'react-router-dom';
 
-const RequireAuth = () => {
+function RequireAuth() {
   const location = useLocation();
   const getToken = JSON.parse(localStorage.getItem('Token')) || '';
 
@@ -9,6 +9,6 @@ const RequireAuth = () => {
   ) : (
     <Navigate to="/login" state={{ from: location }} replace />
   );
-};
+}
 
 export default RequireAuth;
