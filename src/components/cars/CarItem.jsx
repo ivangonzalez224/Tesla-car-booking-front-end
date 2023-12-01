@@ -4,7 +4,7 @@ import { useDispatch } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 import { fetchCarById } from '../../redux/features/carsSlice';
 
-const CarItem = ({ car, classNames }) => {
+function CarItem({ car, classNames }) {
   const { id } = JSON.parse(localStorage.getItem('Token')) || {};
   const dispatch = useDispatch();
   const navigate = useNavigate();
@@ -35,7 +35,7 @@ const CarItem = ({ car, classNames }) => {
       </button>
     </li>
   );
-};
+}
 
 CarItem.propTypes = {
   car: PropTypes.shape({
