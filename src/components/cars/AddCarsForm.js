@@ -3,7 +3,7 @@ import { useDispatch } from 'react-redux';
 import { addNewCars, fetchCars } from '../../redux/features/carsSlice';
 import Navbar from '../Navbar';
 
-const AddCarsForm = () => {
+function AddCarsForm() {
   const dispatch = useDispatch();
   const { id } = JSON.parse(localStorage.getItem('Token')) || {};
   const [name, setTitle] = useState('');
@@ -165,6 +165,6 @@ const AddCarsForm = () => {
       </div>
     </>
   );
-};
+}
 
 export default AddCarsForm;
