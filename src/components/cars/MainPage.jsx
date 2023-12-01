@@ -4,9 +4,7 @@ import Navbar from '../Navbar';
 import CarItem from './CarItem';
 import '../../assets/css/carousel.css';
 
-
 function MainPage() {
-
   const { cars } = useSelector((state) => state.cars);
 
   return (

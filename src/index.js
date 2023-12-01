@@ -8,7 +8,7 @@ import store from './redux/store';
 import App from './App';
 import { fetchCars } from './redux/features/carsSlice';
 
-store.dispatch(fetchCars())
+store.dispatch(fetchCars());
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
