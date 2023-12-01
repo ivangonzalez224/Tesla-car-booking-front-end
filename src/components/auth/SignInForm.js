@@ -3,7 +3,7 @@ import { Link, useNavigate } from 'react-router-dom';
 import { toast } from 'react-toastify';
 import { useForm } from 'react-hook-form';
 
-const LogIn = () => {
+function LogIn() {
   const { reset } = useForm();
   const navigate = useNavigate();
 
@@ -20,7 +20,7 @@ const LogIn = () => {
       toast.warn('Please fill in all fields');
     }
     try {
-      const response = await fetch('http://127.0.0.1:3000/auth/login', {
+      const response = await fetch('https://rent-a-car-96dr.onrender.com/auth/login', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -76,7 +76,6 @@ const LogIn = () => {
             name="email"
             value={data.email}
             onChange={handleInputChange}
-            // required
           />
         </div>
         <div>
@@ -86,7 +85,6 @@ const LogIn = () => {
             name="password"
             value={data.password}
             onChange={handleInputChange}
-            // required
           />
         </div>
         {error && <p className="error">{error}</p>}
@@ -105,6 +103,6 @@ const LogIn = () => {
       </div>
     </div>
   );
-};
+}
 
 export default LogIn;
