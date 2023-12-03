@@ -6,6 +6,9 @@ import { AuthProvider } from './context/AuthProvider';
 import './assets/css/index.css';
 import store from './redux/store';
 import App from './App';
+import { fetchCars } from './redux/features/carsSlice';
+
+store.dispatch(fetchCars());
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(

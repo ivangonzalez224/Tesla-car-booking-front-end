@@ -113,4 +113,5 @@ const carsSlice = createSlice({
   },
 });
 
+export const getAllCars = (state) => state.cars.cars;
 export default carsSlice.reducer;
