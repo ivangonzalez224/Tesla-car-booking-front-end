@@ -44,7 +44,8 @@
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   border-radius: 8px;
 }
-.reserveButton{
+
+.reserveButton {
   width: 100%;
   height: auto;
   margin-top: 20px;
