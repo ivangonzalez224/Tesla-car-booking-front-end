@@ -1,26 +1,37 @@
 import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
+import { useNavigate } from 'react-router-dom';
 import { addNewCars, fetchCars } from '../../redux/features/carsSlice';
 import Navbar from '../Navbar';
+import '../../assets/css/carForm.css';
 
 function AddCarsForm() {
   const dispatch = useDispatch();
+  const navigate = useNavigate();
   const { id } = JSON.parse(localStorage.getItem('Token')) || {};
   const [name, setTitle] = useState('');
   const [image, setPhoto] = useState('');
-  const [model, setModel] = useState('');
+  const [year, setYear] = useState('');
+  const [color, setColor] = useState('');
   const [financeFee, setFinanceFee] = useState('');
+  const [optionPurchase, setOptionPurchase] = useState('');
   const [totalAmount, setTotalAmount] = useState('');
-  const [discription, setDiscription] = useState('');
+  const [description, setDiscription] = useState('');
   const [duration, setDuration] = useState('');
-  const [pending, setPending] = useState('Add Cars');
+  const [pending, setPending] = useState('Add Car');
 
   const nameHandlers = (e) => setTitle(e.target.value);
   const photoHandlers = (e) => setPhoto(e.target.value);
-  const modelHandlers = (e) => setModel(e.target.value);
+  const colorHandlers = (e) => setColor(e.target.value);
   const financeFeeHandlers = (e) => setFinanceFee(e.target.value);
+  const optionPurchaseHandlers = (e) => setOptionPurchase(e.target.value);
   const totalAmountHandlers = (e) => setTotalAmount(e.target.value);
-  const DiscriptionHandlers = (e) => setDiscription(e.target.value);
+  const DescriptionHandlers = (e) => setDiscription(e.target.value);
+  const YearHandlers = (e) => {
+    const value = e.target.value.trim();
+    const parsedValue = value === '' ? '' : parseInt(value, 10);
+    setYear(parsedValue);
+  };
   const DurationHandlers = (e) => {
     const value = e.target.value.trim();
     const parsedValue = value === '' ? '' : parseInt(value, 10);
@@ -31,33 +42,32 @@ function AddCarsForm() {
     const carsDetail = {
       name,
       image,
-      model,
+      year,
+      color,
       finance_fee: financeFee,
-      total_amount: totalAmount,
-      discription,
+      option_to_purchase: optionPurchase,
+      total_amount_payable: totalAmount,
+      description,
       duration,
     };
 
-    setPending('...Adding');
+    setPending('...Adding new car');
 
     dispatch(addNewCars({ car: carsDetail, id }));
 
     setTimeout(() => {
       dispatch(fetchCars(id));
-      setPending('Add Cars');
+      setPending('Add Car');
+      navigate('/mainPage');
     }, 1000);
   };
 
   return (
     <>
       <Navbar />
-      <div className="Add-car-container container mt-3">
-        <div className="card ">
-          {/* <div className="card-header header-title">
-            <div className="col-12 d-flex justify-content-center">
-              <h2>ADD NEW Cars</h2>
-            </div>
-          </div> */}
+      <div className="add-car-container">
+        <div className="add-car-card">
+          <h2 id="add-car-title">Add New Car</h2>
           <div className="card-body">
             <form>
               <div className="mb-2">
@@ -66,7 +76,7 @@ function AddCarsForm() {
                   type="text"
                   name="cars_name"
                   id="cars_id"
-                  placeholder="Cars title"
+                  placeholder="Car name"
                   onChange={(e) => {
                     nameHandlers(e);
                   }}
@@ -75,52 +85,94 @@ function AddCarsForm() {
               <div className="mb-2">
                 <input
                   className="form-control"
-                  type="file"
+                  type="text"
                   name="cars_photo"
                   id="cars_photo"
-                  placeholder="Cars Photo"
+                  placeholder="Car image url"
                   onChange={(e) => {
                     photoHandlers(e);
                   }}
                 />
               </div>
-              <div className="mb-2">
-                <input
-                  className="form-control"
-                  type="text"
-                  name="cars_model"
-                  id="cars_model"
-                  placeholder="Cars model"
-                  onChange={(e) => {
-                    modelHandlers(e);
-                  }}
-                />
+              <div className="add-car-twoInput">
+                <div className="mb-2">
+                  <input
+                    className="input-half"
+                    type="text"
+                    name="car_color"
+                    id="car_color"
+                    placeholder="Car color"
+                    onChange={(e) => {
+                      colorHandlers(e);
+                    }}
+                  />
+                </div>
+                <div className="mb-d">
+                  <input
+                    className="input-half"
+                    type="text"
+                    name="cars_model"
+                    id="cars_model"
+                    placeholder="Car year"
+                    onChange={(e) => {
+                      YearHandlers(e);
+                    }}
+                  />
+                </div>
               </div>
-              <div className="mb-2">
-                <input
-                  className="form-control"
-                  type="text"
-                  name="cars_financefee"
-                  id="cars_financefee"
-                  placeholder="Cars finance fee"
-                  onChange={(e) => {
-                    financeFeeHandlers(e);
-                  }}
-                />
+              <div className="add-car-twoInput">
+                <div className="mb-2">
+                  <input
+                    className="input-half"
+                    type="text"
+                    name="cars_financefee"
+                    id="cars_financefee"
+                    placeholder="Car finance fee"
+                    onChange={(e) => {
+                      financeFeeHandlers(e);
+                    }}
+                  />
+                </div>
+                <div className="mb-d">
+                  <input
+                    className="input-half"
+                    type="text"
+                    name="cars"
+                    id="cars"
+                    placeholder="Option to purchase"
+                    onChange={(e) => {
+                      optionPurchaseHandlers(e);
+                    }}
+                  />
+                </div>
               </div>
-              <div className="mb-2">
-                <input
-                  className="form-control"
-                  type="text"
-                  name="cars_totalAmount"
-                  id="cars_totalAmount"
-                  placeholder="Cars total Amount"
-                  onChange={(e) => {
-                    totalAmountHandlers(e);
-                  }}
-                />
+              <div className="add-car-twoInput">
+                <div className="mb-2">
+                  <input
+                    className="input-half"
+                    type="text"
+                    name="cars_totalAmount"
+                    id="cars_totalAmount"
+                    placeholder="Car total Amount"
+                    onChange={(e) => {
+                      totalAmountHandlers(e);
+                    }}
+                  />
+                </div>
+                <div className="mb-d">
+                  <input
+                    className="input-half"
+                    type="text"
+                    name="cars_duration"
+                    id="cars_Duration"
+                    placeholder="Car duration"
+                    onChange={(e) => {
+                      DurationHandlers(e);
+                    }}
+                  />
+                </div>
               </div>
-              <div className="mb-2">
+              <div className="mb-2 div-textarea">
                 <textarea
                   cols="30"
                   rows="3"
@@ -128,27 +180,15 @@ function AddCarsForm() {
                   type="text"
                   name="cars_discription"
                   id="cars_Discription"
-                  placeholder="Cars Discription"
+                  placeholder="Car description"
                   onChange={(e) => {
-                    DiscriptionHandlers(e);
-                  }}
-                />
-              </div>
-              <div className="mb-2">
-                <input
-                  className="form-control"
-                  type="text"
-                  name="cars_duration"
-                  id="cars_Duration"
-                  placeholder="Cars Duration"
-                  onChange={(e) => {
-                    DurationHandlers(e);
+                    DescriptionHandlers(e);
                   }}
                 />
               </div>
               <div className="mb-2 d-flex justify-content-center align-items-center">
                 <button
-                  className="btn btn-primary"
+                  className="add-car-btn btn-primary"
                   type="button"
                   name="Add-Cars"
                   id="AddCars"
