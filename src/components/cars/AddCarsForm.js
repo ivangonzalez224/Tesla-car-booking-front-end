@@ -3,6 +3,7 @@ import { useDispatch } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 import { addNewCars, fetchCars } from '../../redux/features/carsSlice';
 import Navbar from '../Navbar';
+import '../../assets/css/carForm.css';
 
 function AddCarsForm() {
   const dispatch = useDispatch();
@@ -64,9 +65,9 @@ function AddCarsForm() {
   return (
     <>
       <Navbar />
-      <div className="Add-car-container container mt-3">
-        <div className="card ">
-          <h2>Add New Car</h2>
+      <div className="add-car-container">
+        <div className="add-car-card">
+          <h2 id="add-car-title">Add New Car</h2>
           <div className="card-body">
             <form>
               <div className="mb-2">
@@ -93,67 +94,85 @@ function AddCarsForm() {
                   }}
                 />
               </div>
-              <div className="mb-2">
-                <input
-                  className="form-control"
-                  type="text"
-                  name="car_color"
-                  id="car_color"
-                  placeholder="Car color"
-                  onChange={(e) => {
-                    colorHandlers(e);
-                  }}
-                />
+              <div className="add-car-twoInput">
+                <div className="mb-2">
+                  <input
+                    className="input-half"
+                    type="text"
+                    name="car_color"
+                    id="car_color"
+                    placeholder="Car color"
+                    onChange={(e) => {
+                      colorHandlers(e);
+                    }}
+                  />
+                </div>
+                <div className="mb-d">
+                  <input
+                    className="input-half"
+                    type="text"
+                    name="cars_model"
+                    id="cars_model"
+                    placeholder="Car year"
+                    onChange={(e) => {
+                      YearHandlers(e);
+                    }}
+                  />
+                </div>
               </div>
-              <div className="mb-2">
-                <input
-                  className="form-control"
-                  type="text"
-                  name="cars_model"
-                  id="cars_model"
-                  placeholder="Car year"
-                  onChange={(e) => {
-                    YearHandlers(e);
-                  }}
-                />
+              <div className="add-car-twoInput">
+                <div className="mb-2">
+                  <input
+                    className="input-half"
+                    type="text"
+                    name="cars_financefee"
+                    id="cars_financefee"
+                    placeholder="Car finance fee"
+                    onChange={(e) => {
+                      financeFeeHandlers(e);
+                    }}
+                  />
+                </div>
+                <div className="mb-d">
+                  <input
+                    className="input-half"
+                    type="text"
+                    name="cars"
+                    id="cars"
+                    placeholder="Option to purchase"
+                    onChange={(e) => {
+                      optionPurchaseHandlers(e);
+                    }}
+                  />
+                </div>
               </div>
-              <div className="mb-2">
-                <input
-                  className="form-control"
-                  type="text"
-                  name="cars_financefee"
-                  id="cars_financefee"
-                  placeholder="Car finance fee"
-                  onChange={(e) => {
-                    financeFeeHandlers(e);
-                  }}
-                />
+              <div className="add-car-twoInput">
+                <div className="mb-2">
+                  <input
+                    className="input-half"
+                    type="text"
+                    name="cars_totalAmount"
+                    id="cars_totalAmount"
+                    placeholder="Car total Amount"
+                    onChange={(e) => {
+                      totalAmountHandlers(e);
+                    }}
+                  />
+                </div>
+                <div className="mb-d">
+                  <input
+                    className="input-half"
+                    type="text"
+                    name="cars_duration"
+                    id="cars_Duration"
+                    placeholder="Car duration"
+                    onChange={(e) => {
+                      DurationHandlers(e);
+                    }}
+                  />
+                </div>
               </div>
-              <div className="mb-2">
-                <input
-                  className="form-control"
-                  type="text"
-                  name="cars"
-                  id="cars"
-                  placeholder="Car option to purchase"
-                  onChange={(e) => {
-                    optionPurchaseHandlers(e);
-                  }}
-                />
-              </div>
-              <div className="mb-2">
-                <input
-                  className="form-control"
-                  type="text"
-                  name="cars_totalAmount"
-                  id="cars_totalAmount"
-                  placeholder="Car total Amount"
-                  onChange={(e) => {
-                    totalAmountHandlers(e);
-                  }}
-                />
-              </div>
-              <div className="mb-2">
+              <div className="mb-2 div-textarea">
                 <textarea
                   cols="30"
                   rows="3"
@@ -167,21 +186,9 @@ function AddCarsForm() {
                   }}
                 />
               </div>
-              <div className="mb-2">
-                <input
-                  className="form-control"
-                  type="text"
-                  name="cars_duration"
-                  id="cars_Duration"
-                  placeholder="Car duration"
-                  onChange={(e) => {
-                    DurationHandlers(e);
-                  }}
-                />
-              </div>
               <div className="mb-2 d-flex justify-content-center align-items-center">
                 <button
-                  className="btn btn-primary"
+                  className="add-car-btn btn-primary"
                   type="button"
                   name="Add-Cars"
                   id="AddCars"
