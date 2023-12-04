@@ -48,3 +48,23 @@
   border-radius: 11px;
   text-align: center;
 }
+
+@media screen and (min-width: 768px) {
+  .session-content {
+    width: 70%;
+  }
+
+  .session-logo-container {
+    margin: 5% 0;
+    width: 25%;
+  }
+
+  .session-logo {
+    width: 100%;
+  }
+
+  .session_btn {
+    width: 70%;
+    margin-bottom: 2%;
+  }
+}
