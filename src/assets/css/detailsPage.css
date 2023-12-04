@@ -5,17 +5,17 @@
   }
   
   .headerDetails {
-    color: #87de15; /* Green header color */
+    color: #87de15; 
     text-align: center;
-    margin-bottom: 20px; /* Added margin for spacing */
+    margin-bottom: 20px; 
   }
   
   .Details {
-    color: #333; /* Dark gray text color */
+    color: #333; 
     padding: 20px;
     margin-top: 20px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Box shadow for a subtle elevation effect */
-    border-radius: 8px; /* Rounded corners for a modern look */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 8px; 
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -23,20 +23,23 @@
   }
   
   .Details h3 {
-    color: #87de15; /* Green heading color */
+    color: #87de15; 
     margin-bottom: 10px;
   }
   
   .Details p {
-    color: #333; /* Dark gray text color */
+    color: #141414;
+    padding: 7px;
     margin: 5px 0;
+    background-color: #d7f4b1;
+    box-shadow: 0px 5px 10px 0px rgb(135 222 21 / 44%);
   }
   
   .Details img {
     max-width: 100%;
     height: auto;
     margin-top: 20px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Box shadow for the image */
-    border-radius: 8px; /* Rounded corners for a modern look */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); 
+    border-radius: 8px; 
   }
   
