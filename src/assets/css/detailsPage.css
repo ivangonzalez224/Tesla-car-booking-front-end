@@ -1,0 +1,42 @@
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+  }
+  
+  .headerDetails {
+    color: #87de15; /* Green header color */
+    text-align: center;
+    margin-bottom: 20px; /* Added margin for spacing */
+  }
+  
+  .Details {
+    color: #333; /* Dark gray text color */
+    padding: 20px;
+    margin-top: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Box shadow for a subtle elevation effect */
+    border-radius: 8px; /* Rounded corners for a modern look */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+  }
+  
+  .Details h3 {
+    color: #87de15; /* Green heading color */
+    margin-bottom: 10px;
+  }
+  
+  .Details p {
+    color: #333; /* Dark gray text color */
+    margin: 5px 0;
+  }
+  
+  .Details img {
+    max-width: 100%;
+    height: auto;
+    margin-top: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Box shadow for the image */
+    border-radius: 8px; /* Rounded corners for a modern look */
+  }
+  
