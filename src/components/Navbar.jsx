@@ -56,7 +56,7 @@ function Navbar() {
         </div>
         <div className="sidebar-links-container">
           <Link to="/mainPage" className={`nav-link ${location.pathname === '/mainPage' ? 'active' : ''}`} onClick={closeSidebar}>Cars</Link>
-          <Link to="/" className={`nav-link ${location.pathname === '/' ? 'active' : ''}`} onClick={closeSidebar}>Add Car</Link>
+          <Link to="/addCar" className={`nav-link ${location.pathname === '/addCar' ? 'active' : ''}`} onClick={closeSidebar}>Add Car</Link>
           <Link to="/cars/delete" className={`nav-link ${location.pathname === '/cars/delete' ? 'active' : ''}`} onClick={closeSidebar}>Delete Car</Link>
           <Link to="/reservations" className={`nav-link ${location.pathname === '/reservations' ? 'active' : ''}`} onClick={closeSidebar}>Reservations</Link>
           <button

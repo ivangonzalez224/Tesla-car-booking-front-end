@@ -41,7 +41,7 @@ function LogIn() {
           );
           reset();
           localStorage.setItem('token', token);
-          navigate('/');
+          navigate('/mainPage');
         } else {
           setError('Authentication failed. Please try again.');
         }
