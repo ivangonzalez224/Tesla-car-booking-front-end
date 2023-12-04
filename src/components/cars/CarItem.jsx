@@ -30,7 +30,7 @@ function CarItem({ car, classNames }) {
             />
           </div>
           <h6 className={classNames.title}>{car.name}</h6>
-          <p className={classNames.discription}>{car.discription}</p>
+          <p className={classNames.discription}>{car.description}</p>
         </div>
       </button>
     </li>
@@ -42,7 +42,7 @@ CarItem.propTypes = {
     id: PropTypes.number.isRequired,
     image: PropTypes.string.isRequired,
     name: PropTypes.string.isRequired,
-    discription: PropTypes.string.isRequired,
+    description: PropTypes.string.isRequired,
   }).isRequired,
   classNames: PropTypes.shape({
     button: PropTypes.string,
