@@ -1,10 +1,18 @@
 import React from 'react';
-import { useSelector } from 'react-redux';
+import { useSelector, useDispatch } from 'react-redux';
+import { carRemoved } from '../../redux/features/carsSlice';
 import Navbar from '../Navbar';
 import '../../assets/css/deleteCar.css';
 
 function DeleteCar() {
+  const dispatch = useDispatch();
   const { cars } = useSelector((state) => state.cars);
+  const filteredCars = cars.filter((car) => !car.is_removed);
+
+  const handleDeleteCar = (carId) => {
+    dispatch(carRemoved(carId));
+  };
+
   return (
     <>
       <Navbar />
@@ -20,7 +28,7 @@ function DeleteCar() {
             </tr>
           </thead>
           <tbody>
-            {cars.map((car) => (
+            {filteredCars.map((car) => (
               <tr key={car.id}>
                 <td className="delete-car-name">{car.name}</td>
                 <td className="actions">
