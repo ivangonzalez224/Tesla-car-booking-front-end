@@ -8,7 +8,7 @@ import '../../assets/css/carousel.css';
 function MainPage() {
   const dispatch = useDispatch();
   const { cars } = useSelector((state) => state.cars);
-  
+
   const handleCarRemoved = (carId) => {
     dispatch(carRemoved(carId));
   };
