@@ -68,10 +68,10 @@ const carsSlice = createSlice({
       const reserved = state.cars.cars.find((car) => car.id === id);
       state.reservedCar = reserved;
     },
-    carRemoved(state, action) {
-      const car = state.cars.cars.find((car) => car.id === action.payload);
+    carRemoved: (state, action) => {
+      const car = state.cars.find((car) => car.id === action.payload);
       if (car) {
-        car.isRemoved = true;
+        car.is_removed = true;
       }
     },
   },
@@ -113,5 +113,9 @@ const carsSlice = createSlice({
   },
 });
 
+export const carRemoved = (carId) => ({
+  type: 'cars/carRemoved',
+  payload: carId,
+});
 export const getAllCars = (state) => state.cars.cars;
 export default carsSlice.reducer;
