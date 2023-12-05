@@ -56,6 +56,35 @@ export const addNewCars = createAsyncThunk('cars/addNewCars', async (data) => {
   }
 });
 
+export const updateCars = createAsyncThunk('cars/updateCars', async (data) => {
+  const { authToken } = data.id;
+  const { carId } = data;
+  const isRemoved = data.car.is_removed;
+
+  try {
+    const config = {
+      headers: {
+        authorization: authToken,
+        'Content-Type': 'application/json',
+      },
+    };
+    const baseUrl = `http://127.0.0.1:3000/api/v1/users/${data.id}/cars/${carId}`;
+
+    const response = await axios.delete(
+      baseUrl,
+      JSON.stringify({
+        isRemoved,
+      }),
+      config,
+    );
+    toast.success(`Car Successfully ${response.statusText} `);
+    return response.data;
+  } catch (error) {
+    toast.error('Opps failed to update Car');
+    throw Error(error);
+  }
+});
+
 const carsSlice = createSlice({
   name: 'cars',
   initialState,
