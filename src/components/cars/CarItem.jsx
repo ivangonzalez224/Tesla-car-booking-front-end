@@ -15,7 +15,7 @@ function CarItem({ car, classNames }) {
   };
 
   return (
-    <li style={{ width: '18rem' }}>
+    <li>
       <button
         onClick={() => handleDispatch(car.id)}
         className={classNames.button}
