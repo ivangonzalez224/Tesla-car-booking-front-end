@@ -1,0 +1,18 @@
+.react-multi-carousel-list {
+  height: 80vh;
+  margin-right: 10px;
+}
+
+.car-item {
+  margin-left: 10px;
+  height: 100%;
+}
+
+.btn-car-item {
+  width: 100%;
+  height: 337px;
+}
+
+.card-body > p {
+  font-size: 15px;
+}
