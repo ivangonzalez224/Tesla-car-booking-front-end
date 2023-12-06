@@ -11,7 +11,7 @@ function CarItem({ car, classNames }) {
 
   const handleDispatch = (carId) => {
     dispatch(fetchCarById({ userId: id, carId }));
-    navigate('/details');
+    navigate('../details/CarDetails.js');
   };
 
   return (

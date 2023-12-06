@@ -1,5 +1,6 @@
 import { React } from 'react';
-import { useSelector } from 'react-redux';
+import { useSelector, useDispatch } from 'react-redux';
+import { carRemoved } from '../../redux/features/carsSlice';
 import Navbar from '../Navbar';
 import CarItem from './CarItem';
 import Carousel from 'react-multi-carousel';
@@ -8,6 +9,7 @@ import '../../assets/css/carouselStyle.css'
 
 
 function MainPage() {
+  const dispatch = useDispatch();
   const { cars } = useSelector((state) => state.cars);
   const responsive = {
     superLargeDesktop: {
@@ -28,17 +30,23 @@ function MainPage() {
     }
   };
 
+  const handleCarRemoved = (carId) => {
+    dispatch(carRemoved(carId));
+  };
+  const filteredCars = cars.filter((car) => !car.is_removed);
+
   return (
     <>
       <Navbar />
       <div className="main-page-container">
       <Carousel responsive={responsive}>
-      {cars.map((car) => (
+      {filteredCars.map((car) => (
             <div className='car-item'>
               <CarItem
                 key={car.id}
                 car={car}
-                classNames={{
+                handleCarRemoved={handleCarRemoved}
+          classNames={{
                   button: 'btn btn-outline-primary btn-car-item',
                   carBody: 'card-body',
                   imageContainer: 'image-container',

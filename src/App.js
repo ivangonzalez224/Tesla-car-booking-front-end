@@ -8,7 +8,7 @@ import Session from './components/session/Session';
 import MainPage from './components/cars/MainPage';
 import DeleteCar from './components/cars/DeleteCar';
 import Reservations from './components/reservations/Reservations';
-import CarDetails from './components/cars/CarDetails';
+import CarDetails from './components/details/CarDetails';
 
 function App() {
   return (
@@ -19,7 +19,7 @@ function App() {
       <Route element={<RequireAuth />}>
         <Route exact path="/addCar" element={<AddCarsForm />} />
         <Route path="/mainPage" element={<MainPage />} />
-        <Route path="/details/:id" element={<CarDetails />} />
+        <Route path="/details/:carId" element={<CarDetails />} />
         <Route path="/cars/delete" element={<DeleteCar />} />
         <Route path="/reservations" element={<Reservations />} />
       </Route>
