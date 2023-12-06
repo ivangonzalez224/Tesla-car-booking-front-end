@@ -58,7 +58,7 @@ function Login() {
       });
       localStorage.setItem(
         'Token',
-        JSON.stringify({ authToken, username, id }),
+        JSON.stringify({ authToken, username, id, role }),
       );
       setEmail('');
       setPwd('');
