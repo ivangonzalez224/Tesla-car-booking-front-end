@@ -1,5 +1,10 @@
 /* Index.css styles */
 
+:root {
+  --basic-text-color: #000;
+  --basic-blue-color: #1a237e;
+}
+
 body {
   margin: 0;
   font-family:
@@ -81,7 +86,7 @@ textarea {
   font-size: 22px;
   padding: 0.25rem;
   border-radius: 0.5rem;
-  border: 1px solid #1a237e;
+  border: 1px solid var(--basic-blue-color);
 }
 
 label,
@@ -96,7 +101,7 @@ button {
 .instructions {
   font-size: 0.75rem;
   border-radius: 0.5rem;
-  background: #000;
+  background: var(--basic-text-color);
   color: #fff;
   padding: 0.25rem;
   position: relative;
@@ -217,15 +222,15 @@ button {
 }
 
 .border-color {
-  border: 1px solid #1a237e;
+  border: 1px solid var(--basic-blue-color);
 }
 
 .btn-color {
-  background: #1a237e;
+  background: var(--basic-blue-color);
 }
 
 .text-color {
-  color: #1a237e;
+  color: var(--basic-blue-color);
 }
 
 .text-login {
@@ -412,7 +417,7 @@ button {
   font-size: 22px;
   font-weight: 700;
   text-decoration: none;
-  color: #000;
+  color: var(--basic-text-color);
   cursor: pointer;
   padding: 8px;
   width: 100%;
@@ -431,6 +436,7 @@ button {
 .license {
   font-size: 13px;
   margin: 0;
+  color: var(--basic-text-color);
 }
 
 .mob-nav {
@@ -471,7 +477,7 @@ button {
   width: 90%;
   height: 320px;
   border-radius: 30px;
-  box-shadow: 2px 2px 8px #000;
+  box-shadow: 2px 2px 8px var(--basic-text-color);
 }
 
 .car-name {
@@ -538,7 +544,7 @@ button {
 
   .Add-car-container,
   .delete-car-container,
-  .main-page-container,
+  /* .main-page-container, */
   .reservation-page-container,
   .login-page-container {
     width: 100%;
@@ -594,7 +600,7 @@ button {
 .car-card {
   width: 200px;
   height: 100px;
-  border: 1px solid #000;
+  border: 1px solid var(--basic-text-color);
 }
 
 #loom-companion-mv3 {
