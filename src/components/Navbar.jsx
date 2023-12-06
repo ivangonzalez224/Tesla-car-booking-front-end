@@ -13,7 +13,7 @@ function Navbar() {
   const { setAuth } = useAuth();
   const navigate = useNavigate();
 
-  const { authToken } = JSON.parse(localStorage.getItem('Token')) || {};
+  const { authToken, role } = JSON.parse(localStorage.getItem('Token')) || {};
   const toggleSidebar = () => {
     setSidebarVisible(!sidebarVisible);
   };
@@ -56,8 +56,12 @@ function Navbar() {
         </div>
         <div className="sidebar-links-container">
           <Link to="/mainPage" className={`nav-link ${location.pathname === '/mainPage' ? 'active' : ''}`} onClick={closeSidebar}>Cars</Link>
-          <Link to="/addCar" className={`nav-link ${location.pathname === '/addCar' ? 'active' : ''}`} onClick={closeSidebar}>Add Car</Link>
-          <Link to="/cars/delete" className={`nav-link ${location.pathname === '/cars/delete' ? 'active' : ''}`} onClick={closeSidebar}>Delete Car</Link>
+          {role === 'admin' && (
+            <>
+              <Link to="/addCar" className={`nav-link ${location.pathname === '/addCar' ? 'active' : ''}`} onClick={closeSidebar}>Add Car</Link>
+              <Link to="/cars/delete" className={`nav-link ${location.pathname === '/cars/delete' ? 'active' : ''}`} onClick={closeSidebar}>Delete Car</Link>
+            </>
+          )}
           <Link to="/reservations" className={`nav-link ${location.pathname === '/reservations' ? 'active' : ''}`} onClick={closeSidebar}>Reservations</Link>
           <button
             disabled={!authToken}
