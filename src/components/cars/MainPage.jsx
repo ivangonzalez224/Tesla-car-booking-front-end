@@ -1,20 +1,28 @@
 import { React } from 'react';
-import { useSelector } from 'react-redux';
+import { useSelector, useDispatch } from 'react-redux';
+import { carRemoved } from '../../redux/features/carsSlice';
 import Navbar from '../Navbar';
 import CarItem from './CarItem';
 import '../../assets/css/carousel.css';
 
 function MainPage() {
+  const dispatch = useDispatch();
   const { cars } = useSelector((state) => state.cars);
+
+  const handleCarRemoved = (carId) => {
+    dispatch(carRemoved(carId));
+  };
+  const filteredCars = cars.filter((car) => !car.is_removed);
 
   return (
     <>
       <Navbar />
       <div className="main-page-container">MainPage</div>
-      {cars.map((car) => (
+      {filteredCars.map((car) => (
         <CarItem
           key={car.id}
           car={car}
+          handleCarRemoved={handleCarRemoved}
           classNames={{
             button: 'btn btn-outline-primary',
             carBody: 'card-body',
