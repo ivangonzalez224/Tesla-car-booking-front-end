@@ -1,62 +1,28 @@
 /* eslint-disable react/no-array-index-key */
 /* eslint-disable jsx-a11y/label-has-associated-control */
-/* eslint-disable max-len */
 import React, { useState, useEffect } from 'react';
 import { useSelector } from 'react-redux';
 import PropTypes from 'prop-types';
+import fetchCities from './cityService';
 
 function CityDropdown({ onSelectCity }) {
-  const [selectedCountry, setSelectedCountry] = useState('');
   const [cities, setCities] = useState([]);
-  const [countries, setCountries] = useState([]);
 
   useEffect(() => {
-    fetch('https://restcountries.com/v2/all')
-      .then((response) => response.json())
-      .then((data) => setCountries(data.map((country) => ({ code: country.alpha2Code, name: country.name }))))
-      .catch((error) => console.error('Error fetching countries:', error));
+    setCities(fetchCities());
   }, []);
 
-  useEffect(() => {
-    if (selectedCountry) {
-      setCities(['City 1', 'City 2', 'City 3']);
-    }
-  }, [selectedCountry]);
-
-  const handleCountryChange = (event) => {
-    const country = event.target.value;
-    setSelectedCountry(country);
-    onSelectCity(country, '');
-  };
-
   const handleCityChange = (event) => {
-    onSelectCity(selectedCountry, event.target.value);
+    onSelectCity('', event.target.value);
   };
 
   return (
     <div>
-      <label htmlFor="countryList">Choose a country:</label>
-      <select
-        id="countryList"
-        name="countryList"
-        value={selectedCountry}
-        onChange={handleCountryChange}
-      >
-        <option value="">Select a country</option>
-        {countries.map(({ code, name }, index) => (
-          <option key={index} value={code}>
-            {name}
-          </option>
-        ))}
-      </select>
-
       <label htmlFor="cityList">Choose a city:</label>
       <select
         id="cityList"
         name="cityList"
-        value={cities}
         onChange={handleCityChange}
-        disabled={!selectedCountry}
       >
         <option value="">Select a city</option>
         {cities.map((city, index) => (
