@@ -7,27 +7,51 @@ function ReserveNav() {
   const filteredCars = cars.filter((car) => !car.is_removed);
 
   return (
-    <>
-      <div className="reserve-container">
-        <h3 id="reserve-title">Reserve a Test Drive</h3>
-        <div className="reserve-content">
+    <div className="reserve-container">
+      <h3 id="reserve-title">Reserve a Test Drive</h3>
+      <div className="reserve-content">
         <p>
-         User: { username } 
+          User:
+          {' '}
+          { username }
         </p>
-        Select a car:
-        <select 
-          id=""
-          required
-        >
-          {filteredCars.map((car) => (
+        <div>
+          Select a car:
+          <select
+            id="reserve-carSelect"
+            required
+          >
+            {filteredCars.map((car) => (
               <option key={car.id}>
-                 {car.name}
+                {car.name}
               </option>
-          ))}    
-        </select>
-        </div> 
+            ))}
+          </select>
+        </div>
+        <div>
+          Select a city:
+          <select
+            id="reserve-city"
+            required
+          >
+            {filteredCars.map((car) => (
+              <option key={car.id}>
+                {car.name}
+              </option>
+            ))}
+          </select>
+        </div>
+        <div>
+          Select a date for the test:
+          <input
+            type="datetime"
+            id="reserve-date"
+            required
+          />
+        </div>
+        <button className="reserve-btn" type="submit">Reserve</button>
       </div>
-    </>
+    </div>
   );
 }
 
