@@ -57,7 +57,6 @@ function MainPage() {
             </div>
           ))}
         </Carousel>
-        ;
       </div>
     </>
   );
