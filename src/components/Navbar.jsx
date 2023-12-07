@@ -63,6 +63,7 @@ function Navbar() {
             </>
           )}
           <Link to="/reservations" className={`nav-link ${location.pathname === '/reservations' ? 'active' : ''}`} onClick={closeSidebar}>Reservations</Link>
+          <Link to="/reserveNav" className={`nav-link ${location.pathname === '/reserveNav' ? 'active' : ''}`} onClick={closeSidebar}>Reserve Form</Link>
           <button
             disabled={!authToken}
             onClick={handleLogout}
