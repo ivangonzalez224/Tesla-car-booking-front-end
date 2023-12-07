@@ -1,0 +1,28 @@
+const fetchCities = () => [
+  'New York',
+  'Tokyo',
+  'London',
+  'Paris',
+  'Sydney',
+  'Beijing',
+  'Mumbai',
+  'Istanbul',
+  'Berlin',
+  'Cairo',
+  'Moscow',
+  'Rio de Janeiro',
+  'Toronto',
+  'Seoul',
+  'Dubai',
+  'Bangkok',
+  'Amsterdam',
+  'Nairobi',
+  'Mexico City',
+  'Vancouver',
+  'San Francisco',
+  'Buenos Aires',
+  'Cape Town',
+  'Rome',
+];
+
+export default fetchCities;
