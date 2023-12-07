@@ -2,6 +2,7 @@
 /* eslint-disable jsx-a11y/label-has-associated-control */
 import React, { useState, useEffect } from 'react';
 import { useSelector } from 'react-redux';
+import { useNavigate } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import fetchCities from './cityService';
 
@@ -40,20 +41,43 @@ CityDropdown.propTypes = {
 };
 
 function ReserveNav() {
-  const { username } = JSON.parse(localStorage.getItem('Token')) || {};
+  const navigate = useNavigate();
+  const { username, id } = JSON.parse(localStorage.getItem('Token')) || {};
+  const idNumber = parseInt(id, 10);
   const { cars } = useSelector((state) => state.cars);
   const filteredCars = cars.filter((car) => !car.is_removed);
   const [selectedCity, setSelectedCity] = useState('');
   const [selectedCar, setSelectedCar] = useState('');
   const [selectedDate, setSelectedDate] = useState('');
 
-  const handleSubmit = () => {
+  const handleSubmit = async (e) => {
+    e.preventDefault();
     const reservationData = {
-      selectedCity,
-      selectedCar,
-      selectedDate,
+      city: selectedCity,
+      car_id: selectedCar,
+      test_date: selectedDate,
+      user_id: idNumber,
     };
-    console.log('Reservation Data:', reservationData);
+
+    try {
+      const response = await fetch(`http://localhost:3000/api/v1/users/${id}/reservations`, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(reservationData),
+      });
+
+      if (!response.ok) {
+        const errorData = await response.json();
+        throw new Error(errorData.error || 'Failed to make reservation.');
+      }
+
+      await response.json();
+      navigate('/mainPage');
+    } catch (error) {
+      throw new Error(error || 'Failed to make reservation.');
+    }
   };
 
   return (
@@ -75,7 +99,7 @@ function ReserveNav() {
           >
             <option value="">Select a car</option>
             {filteredCars.map((car) => (
-              <option key={car.id} value={car.name}>
+              <option key={car.id} value={car.id}>
                 {car.name}
               </option>
             ))}
