@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { useParams, useNavigate } from 'react-router-dom';
+import { useParams, useNavigate, Link } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 import PropTypes from 'prop-types';
 
@@ -84,6 +84,7 @@ function ReserveDetails() {
 
   return (
     <div className="reserve-container">
+      <Link to="/mainPage"> Go Back </Link>
       <h3 id="reserve-title">Reserve a Test Drive</h3>
       <div className="reserve-content">
         <p>

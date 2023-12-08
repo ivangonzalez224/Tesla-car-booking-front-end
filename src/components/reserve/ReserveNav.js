@@ -2,7 +2,7 @@
 /* eslint-disable jsx-a11y/label-has-associated-control */
 import React, { useState, useEffect } from 'react';
 import { useSelector } from 'react-redux';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 
 function CityDropdown({ onSelectCity }) {
@@ -83,6 +83,7 @@ function ReserveNav() {
 
   return (
     <div className="reserve-container">
+      <Link to="/mainPage"> Go Back </Link>
       <h3 id="reserve-title">Reserve a Test Drive</h3>
       <div className="reserve-content">
         <p>
