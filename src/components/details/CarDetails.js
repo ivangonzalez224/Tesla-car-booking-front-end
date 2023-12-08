@@ -18,6 +18,9 @@ function CarDetails() {
     }
   }, [dispatch, userId, carId]);
 
+  console.log(carDetails);
+  console.log(carDetails.name);
+
   return (
     <>
       <Navbar />
@@ -34,12 +37,11 @@ function CarDetails() {
             <p>Finance Fee: {carDetails.finance_fee}</p>
             <p>Option to Purchase: {carDetails.option_to_purchase}</p>
             <p>Total Amount Payable: {carDetails.total_amount_payable}</p>
+            <Link to={`/reserveDetails/${carId + '??' + carDetails.name}`}> Reserved </Link>
             <p>Duration: {carDetails.duration} months</p>
             <p>Description: {carDetails.description}</p>
             {/* Reserved Button - Link to the Reserve Page */}
-            <Link to="../reservations/Reservations.jsx">
-              <button className="reserveButton">Reserved</button>
-            </Link>
+            
           </div>
         )}
       </div>
