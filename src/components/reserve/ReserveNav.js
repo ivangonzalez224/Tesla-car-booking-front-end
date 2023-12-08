@@ -4,6 +4,7 @@ import React, { useState, useEffect } from 'react';
 import { useSelector } from 'react-redux';
 import { useNavigate, Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
+import '../../assets/css/reservation.css';
 
 function CityDropdown({ onSelectCity }) {
   const cityItems = useSelector((store) => store.cities);
@@ -19,14 +20,14 @@ function CityDropdown({ onSelectCity }) {
 
   return (
     <div>
-      <label htmlFor="cityList">Choose a city:</label>
+      <label htmlFor="cityList" />
       <select
         id="cityList"
         name="cityList"
         onChange={handleCityChange}
         required
       >
-        <option value="">Select a city</option>
+        <option value="">City</option>
         {cities.map((city) => (
           <option key={city.id} value={city.city}>
             {city.city}
@@ -87,46 +88,46 @@ function ReserveNav() {
 
   return (
     <div className="reserve-container">
-      <Link to="/mainPage"> Go Back to Main Page</Link>
-      <h3 id="reserve-title">Reserve a Test Drive</h3>
-      <div className="reserve-content">
-        <p>
-          User:
-          {' '}
-          {username}
-        </p>
-        <form className="form-reserve" onSubmit={handleSubmit}>
-          <CityDropdown onSelectCity={(city) => setSelectedCity(city)} />
-          <div>
-            <label htmlFor="reserve-carSelect">
-              Select a car:
-              <select
-                id="reserve-carSelect"
-                onChange={(e) => setSelectedCar(e.target.value)}
-                required
-              >
-                <option value="">Select a car</option>
-                {filteredCars.map((car) => (
-                  <option key={car.id} value={car.id}>
-                    {car.name}
-                  </option>
-                ))}
-              </select>
-            </label>
-          </div>
-          <div>
-            <label htmlFor="reserve-date">
-              Select a date for the test:
-              <input
-                type="datetime-local"
-                id="reserve-date"
-                onChange={(e) => setSelectedDate(e.target.value)}
-                required
-              />
-            </label>
-          </div>
-          <button className="reserve-btn" type="submit">Reserve</button>
-        </form>
+      <div className="background">
+        <Link to="/mainPage"> Go Back to Main Page</Link>
+        <h3 id="reserve-title">Reserve a Test Drive</h3>
+        <div className="reserve-content">
+          <p>
+            User:
+            {' '}
+            {username}
+          </p>
+          <form className="form-reserve" onSubmit={handleSubmit}>
+            <div>
+              <label htmlFor="reserve-carSelect">
+                <select
+                  id="reserve-carSelect"
+                  onChange={(e) => setSelectedCar(e.target.value)}
+                  required
+                >
+                  <option value="">Select a car</option>
+                  {filteredCars.map((car) => (
+                    <option key={car.id} value={car.id}>
+                      {car.name}
+                    </option>
+                  ))}
+                </select>
+              </label>
+            </div>
+            <CityDropdown onSelectCity={(city) => setSelectedCity(city)} />
+            <div>
+              <label htmlFor="reserve-date">
+                <input
+                  type="datetime-local"
+                  id="reserve-date"
+                  onChange={(e) => setSelectedDate(e.target.value)}
+                  required
+                />
+              </label>
+            </div>
+            <button className="reserve-btn-form" type="submit">Reserve</button>
+          </form>
+        </div>
       </div>
     </div>
   );
