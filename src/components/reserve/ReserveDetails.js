@@ -17,20 +17,22 @@ function CityDropdown({ onSelectCity }) {
 
   return (
     <div>
-      <label htmlFor="cityList">Choose a city:</label>
-      <select
-        id="cityList"
-        name="cityList"
-        onChange={handleCityChange}
-        required
-      >
-        <option value="">Select a city</option>
-        {cities.map((city) => (
-          <option key={city.id} value={city.city}>
-            {city.city}
-          </option>
-        ))}
-      </select>
+      <label htmlFor="cityList">
+        Choose a city:
+        <select
+          id="cityList"
+          name="cityList"
+          onChange={handleCityChange}
+          required
+        >
+          <option value="">Select a city</option>
+          {cities.map((city) => (
+            <option key={city.id} value={city.city}>
+              {city.city}
+            </option>
+          ))}
+        </select>
+      </label>
     </div>
   );
 }
@@ -51,6 +53,10 @@ function ReserveDetails() {
   const [selectedCity, setSelectedCity] = useState('');
   const [selectedDate, setSelectedDate] = useState('');
   const idNumber = parseInt(id, 10);
+
+  if (cars.length === 0) {
+    navigate('/mainPage');
+  }
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -84,7 +90,7 @@ function ReserveDetails() {
 
   return (
     <div className="reserve-container">
-      <Link to="/mainPage"> Go Back </Link>
+      <Link to={`/details/${carId}`}> Go Back </Link>
       <h3 id="reserve-title">Reserve a Test Drive</h3>
       <div className="reserve-content">
         <p>
@@ -95,8 +101,11 @@ function ReserveDetails() {
         <form className="form-reserve" onSubmit={handleSubmit}>
           <CityDropdown onSelectCity={(city) => setSelectedCity(city)} />
           <div>
-            <span>Car model: { cardName[0].name }</span>
-            
+            <span>
+              Car model:
+              { cardName[0].name }
+            </span>
+
           </div>
           <div>
             <label htmlFor="reserve-date">

@@ -38,7 +38,7 @@ function CarDetails() {
             <p>Duration: {carDetails.duration} months</p>
             <p>Description: {carDetails.description}</p>
             {/* Reserved Button - Link to the Reserve Page */}
-            
+
           </div>
         )}
       </div>

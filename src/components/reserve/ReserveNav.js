@@ -51,6 +51,10 @@ function ReserveNav() {
   const [selectedCar, setSelectedCar] = useState('');
   const [selectedDate, setSelectedDate] = useState('');
 
+  if (cars.length === 0) {
+    navigate('/mainPage');
+  }
+
   const handleSubmit = async (e) => {
     e.preventDefault();
     const reservationData = {
@@ -83,7 +87,7 @@ function ReserveNav() {
 
   return (
     <div className="reserve-container">
-      <Link to="/mainPage"> Go Back </Link>
+      <Link to="/mainPage"> Go Back to Main Page</Link>
       <h3 id="reserve-title">Reserve a Test Drive</h3>
       <div className="reserve-content">
         <p>
