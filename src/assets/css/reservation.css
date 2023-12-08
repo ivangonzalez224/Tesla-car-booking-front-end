@@ -32,10 +32,7 @@
 .reserve-btn-form {
     background-color: white;
     color: #97c004;
-}
-.reservation-input{
-    margin-top: 16px;
-
+    margin-bottom: 20px;
 }
 #date{
     padding-bottom: 31px;
