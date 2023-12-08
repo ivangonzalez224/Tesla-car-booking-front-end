@@ -2,6 +2,7 @@ import { React, useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import Carousel from 'react-multi-carousel';
 import { carRemoved } from '../../redux/features/carsSlice';
+import { getCities } from '../../redux/cities/CitiesSlice';
 import Navbar from '../Navbar';
 import CarItem from './CarItem';
 import 'react-multi-carousel/lib/styles.css';
@@ -10,6 +11,12 @@ import '../../assets/css/carouselStyle.css';
 function MainPage() {
   const dispatch = useDispatch();
   const { cars } = useSelector((state) => state.cars);
+  const { cityItems } = useSelector((store) => store.cities);
+  useEffect(() => {
+    if (cityItems.length === 0) {
+      dispatch(getCities());
+    }
+  });
   const responsive = {
     superLargeDesktop: {
       breakpoint: { max: 4000, min: 3000 },
