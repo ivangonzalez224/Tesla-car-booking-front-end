@@ -1,4 +1,4 @@
-import { React } from 'react';
+import { React, useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import Carousel from 'react-multi-carousel';
 import { carRemoved } from '../../redux/features/carsSlice';
@@ -40,7 +40,7 @@ function MainPage() {
       <div className="main-page-container">
         <Carousel responsive={responsive}>
           {filteredCars.map((car) => (
-            <div className="car-item" key={car.id}>
+            <ul className="car-item" key={car.id}>
               <CarItem
                 key={car.id}
                 car={car}
@@ -54,7 +54,7 @@ function MainPage() {
                   discription: 'card-text',
                 }}
               />
-            </div>
+            </ul>
           ))}
         </Carousel>
       </div>
