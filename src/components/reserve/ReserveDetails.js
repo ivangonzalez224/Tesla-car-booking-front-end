@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { useParams } from 'react-router-dom';
+import { useParams, useNavigate } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 import PropTypes from 'prop-types';
 
@@ -40,11 +40,12 @@ CityDropdown.propTypes = {
 };
 
 function ReserveDetails() {
-  
+  const navigate = useNavigate();
   const { carId } = useParams();
-  const car_id = carId.split('??')[0];
-  const car_name = carId.split('??')[1];
-  console.log(car_name);
+  const { cars } = useSelector((state) => state.cars);
+  const cardName = cars.filter(
+    (item) => item.id === parseInt(carId, 10),
+  );
 
   const { username, id } = JSON.parse(localStorage.getItem('Token')) || {};
   const [selectedCity, setSelectedCity] = useState('');
@@ -55,7 +56,7 @@ function ReserveDetails() {
     e.preventDefault();
     const reservationData = {
       city: selectedCity,
-      car_id: car_id,
+      car_id: carId,
       test_date: selectedDate,
       user_id: idNumber,
     };
@@ -75,7 +76,7 @@ function ReserveDetails() {
       }
 
       await response.json();
-      navigate('/mainPage');
+      navigate('/reservations');
     } catch (error) {
       throw new Error(error || 'Failed to make reservation.');
     }
@@ -93,7 +94,7 @@ function ReserveDetails() {
         <form className="form-reserve" onSubmit={handleSubmit}>
           <CityDropdown onSelectCity={(city) => setSelectedCity(city)} />
           <div>
-            <span>{ car_name }</span>
+            <span>Car model: { cardName[0].name }</span>
             
           </div>
           <div>

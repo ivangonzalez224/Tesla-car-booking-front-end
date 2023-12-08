@@ -75,7 +75,7 @@ function ReserveNav() {
       }
 
       await response.json();
-      navigate('/mainPage');
+      navigate('/reservations');
     } catch (error) {
       throw new Error(error || 'Failed to make reservation.');
     }
