@@ -19,21 +19,22 @@ function CityDropdown({ onSelectCity }) {
   };
 
   return (
-    <div>
-      <label htmlFor="cityList" />
-      <select
-        id="cityList"
-        name="cityList"
-        onChange={handleCityChange}
-        required
-      >
-        <option value="">City</option>
-        {cities.map((city) => (
-          <option key={city.id} value={city.city}>
-            {city.city}
-          </option>
-        ))}
-      </select>
+    <div className="reserve-inputSection">
+      <label htmlFor="cityList" className="reserve-label">
+        <select
+          id="cityList"
+          name="cityList"
+          onChange={handleCityChange}
+          required
+        >
+          <option value="">Select a city</option>
+          {cities.map((city) => (
+            <option key={city.id} value={city.city}>
+              {city.city}
+            </option>
+          ))}
+        </select>
+      </label>
     </div>
   );
 }
@@ -89,17 +90,20 @@ function ReserveNav() {
   return (
     <div className="reserve-container">
       <div className="background">
-        <Link to="/mainPage"> Go Back to Main Page</Link>
+        <div className="reserve-back-btn">
+          <Link to="/mainPage"> Go Back to Main Page</Link>
+        </div>
+
         <h3 id="reserve-title">Reserve a Test Drive</h3>
         <div className="reserve-content">
           <p>
-            User:
+            Name:
             {' '}
             {username}
           </p>
           <form className="form-reserve" onSubmit={handleSubmit}>
-            <div>
-              <label htmlFor="reserve-carSelect">
+            <div className="reserve-inputSection">
+              <label htmlFor="reserve-carSelect" className="reserve-label">
                 <select
                   id="reserve-carSelect"
                   onChange={(e) => setSelectedCar(e.target.value)}
@@ -115,8 +119,8 @@ function ReserveNav() {
               </label>
             </div>
             <CityDropdown onSelectCity={(city) => setSelectedCity(city)} />
-            <div>
-              <label htmlFor="reserve-date">
+            <div className="reserve-inputSection">
+              <label htmlFor="reserve-date" className="reserve-label">
                 <input
                   type="datetime-local"
                   id="reserve-date"
@@ -125,7 +129,10 @@ function ReserveNav() {
                 />
               </label>
             </div>
-            <button className="reserve-btn-form" type="submit">Reserve</button>
+            <div className="reserve-subDiv">
+              <button className="reserve-btn-form" type="submit">Reserve</button>
+            </div>
+
           </form>
         </div>
       </div>

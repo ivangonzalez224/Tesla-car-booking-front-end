@@ -21,46 +21,122 @@
 }
 
 .reserve-container a {
-  border: 2px solid #afafaf;
+  border: none;
   padding: 1%;
   border-radius: 11px;
   background-color: #f9f9f9;
-  text-decoration: blink;
+  text-decoration: none;
+  font-size: 17px;
   color: #97c004;
-  margin-right: 81%;
+  width: max-content;
+}
+
+.reserve-content {
+  width: 80%;
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+}
+
+.reserve-back-btn {
+  width: 100%;
+}
+
+.reserve-content p {
+  margin-bottom: 9%;
+}
+
+.reserve-subDiv {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0;
+  box-sizing: border-box;
 }
 
 .reserve-btn-form {
+  width: 100%;
   background-color: white;
   color: #97c004;
-  margin-bottom: 20px;
+  border: none;
+  margin: 0;
 }
 
-#date {
-  padding-bottom: 31px;
-}
-
-#reserve-date {
-  height: 33px;
+.reserve-label {
   border-radius: 10px;
-  background: #ffffffd9;
-  padding: 2px;
+  background-color: #99bd0f;
+  padding: 1% 3% 3% 9%;
+  border: #fff solid 1px;
+  color: #fff;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.reserve-inputSection {
+  width: 90%;
+  margin-right: 2%;
+  box-sizing: border-box;
+  margin-bottom: 12%;
 }
 
 select {
-  height: 33px;
-  border-radius: 10px;
-  background: #ffffffd9;
-  padding: 2px;
+  width: 100%;
+  border: none;
+  background-color: #99bd0f;
+  color: #fff;
+  box-sizing: border-box;
+}
+
+select:focus,
+input:focus {
+  outline: none;
+}
+
+#reserve-date {
+  color: #fff;
+  background-color: #99bd0f;
+  border: none;
 }
 
 @media (min-width: 768px) {
+  .reserve-content {
+    width: 90%;
+  }
+
+  .reserve-content p {
+    margin-left: 6%;
+    margin-bottom: 3%;
+  }
+
   .form-reserve {
     display: flex;
     flex-direction: row;
-    flex-wrap: wrap;
     align-items: center;
+    justify-content: center;
     width: 100%;
-    gap: 10px;
+    gap: 3%;
+  }
+
+  .reserve-label {
+    padding: 3% 5% 6% 5%;
+    box-sizing: border-box;
+  }
+
+  .reserve-inputSection {
+    width: 19%;
+    margin-right: 2%;
+    box-sizing: border-box;
+    margin-bottom: 0;
+  }
+
+  .reserve-subDiv {
+    width: 19%;
+    margin-top: 0.4%;
+  }
+
+  .reserve-btn-form {
+    padding: 4% 19%;
+    cursor: pointer;
   }
 }

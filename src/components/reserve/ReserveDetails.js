@@ -17,8 +17,8 @@ function CityDropdown({ onSelectCity }) {
   };
 
   return (
-    <div className="reservation-input">
-      <label htmlFor="cityList">
+    <div className="reserve-inputSection">
+      <label htmlFor="cityList" className="reserve-label">
         <select
           id="cityList"
           name="cityList"
@@ -45,12 +45,14 @@ function ReserveDetails() {
   const navigate = useNavigate();
   const { carId } = useParams();
   const { cars } = useSelector((state) => state.cars);
+  const filteredCars = cars.filter((car) => !car.is_removed);
   const cardName = cars.filter(
     (item) => item.id === parseInt(carId, 10),
   );
 
   const { username, id } = JSON.parse(localStorage.getItem('Token')) || {};
   const [selectedCity, setSelectedCity] = useState('');
+  const [selectedCar, setSelectedCar] = useState(cardName[0].id);
   const [selectedDate, setSelectedDate] = useState('');
   const idNumber = parseInt(id, 10);
 
@@ -62,7 +64,7 @@ function ReserveDetails() {
     e.preventDefault();
     const reservationData = {
       city: selectedCity,
-      car_id: carId,
+      car_id: selectedCar,
       test_date: selectedDate,
       user_id: idNumber,
     };
@@ -91,8 +93,9 @@ function ReserveDetails() {
   return (
     <div className="reserve-container">
       <div className="background">
-
-        <Link to={`/details/${carId}`}> Go Back </Link>
+        <div className="reserve-back-btn">
+          <Link to="/mainPage">Go Back</Link>
+        </div>
         <h3 id="reserve-title">Reserve a Test Drive</h3>
         <div className="reserve-content">
           <p>
@@ -101,17 +104,32 @@ function ReserveDetails() {
             {username}
           </p>
           <form className="form-reserve" onSubmit={handleSubmit}>
-            <div className="reservation-input">
-              <span>
-                Car model:
-                { cardName[0].name }
-              </span>
-
+            <div className="reserve-inputSection">
+              <label htmlFor="reserve-carSelect" className="reserve-label">
+                <select
+                  id="reserve-carSelect"
+                  onChange={(e) => {
+                    if (e.target.value === '') {
+                      setSelectedCar(cardName[0].id);
+                    } else {
+                      setSelectedCar(e.target.value);
+                    }
+                  }}
+                  required
+                  defaultValue={cardName[0].id}
+                >
+                  <option>Select a car</option>
+                  {filteredCars.map((car) => (
+                    <option key={car.id} value={car.id}>
+                      {car.name}
+                    </option>
+                  ))}
+                </select>
+              </label>
             </div>
             <CityDropdown onSelectCity={(city) => setSelectedCity(city)} />
-            <div className="reservation-input" id="date">
-              <label htmlFor="reserve-date">
-                Date:
+            <div className="reserve-inputSection">
+              <label htmlFor="reserve-date" className="reserve-label" aria-label="Label">
                 <input
                   type="datetime-local"
                   id="reserve-date"
@@ -120,7 +138,9 @@ function ReserveDetails() {
                 />
               </label>
             </div>
-            <button className="reserve-btn-form" type="submit">Reserve</button>
+            <div className="reserve-subDiv">
+              <button className="reserve-btn-form" type="submit">Reserve</button>
+            </div>
           </form>
         </div>
       </div>
