@@ -9,6 +9,8 @@ import MainPage from './components/cars/MainPage';
 import DeleteCar from './components/cars/DeleteCar';
 import Reservations from './components/reservations/Reservations';
 import CarDetails from './components/details/CarDetails';
+import ReserveNav from './components/reserve/ReserveNav';
+import ReserveDetails from './components/reserve/ReserveDetails';
 
 function App() {
   return (
@@ -22,6 +24,8 @@ function App() {
         <Route path="/details/:carId" element={<CarDetails />} />
         <Route path="/cars/delete" element={<DeleteCar />} />
         <Route path="/reservations" element={<Reservations />} />
+        <Route path="/reserveNav" element={<ReserveNav />} />
+        <Route path="/reserveDetails/:carId" element={<ReserveDetails />} />
       </Route>
     </Routes>
   );
