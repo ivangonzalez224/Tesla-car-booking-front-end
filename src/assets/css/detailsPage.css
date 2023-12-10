@@ -42,8 +42,11 @@
   margin: 5px 0;
   background-color: #d7f4b1;
   box-shadow: 0 5px 10px 0 rgb(135 222 21 / 44%);
+  transition: transform 0.1s ease-in-out;
 }
-
+.Details p:hover{
+  transform: scale(1.06);
+}
 .Details img {
   width: 100%;
   height: auto;
