@@ -400,7 +400,7 @@ button {
 .main-page-container,
 .reservation-page-container,
 .login-page-container,
-.details-page {
+.details-all-page {
   width: 80%;
 }
 
@@ -544,7 +544,8 @@ button {
 
   .Add-car-container,
   .delete-car-container,
-  /* .main-page-container, */
+  .main-page-container,
+  .details-all-page,
   .reservation-page-container,
   .login-page-container {
     width: 100%;

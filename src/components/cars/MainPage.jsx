@@ -27,11 +27,11 @@ function MainPage() {
       items: 3,
     },
     tablet: {
-      breakpoint: { max: 992, min: 320 },
+      breakpoint: { max: 992, min: 375 },
       items: 2,
     },
     mobile: {
-      breakpoint: { max: 320, min: 0 },
+      breakpoint: { max: 375, min: 0 },
       items: 1,
     },
   };
