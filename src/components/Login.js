@@ -5,31 +5,23 @@ import React, {
 import { Link, useNavigate, useLocation } from 'react-router-dom';
 import axios from '../api/axios';
 import AuthContext from '../context/AuthProvider';
-
 const LOGIN_URL = 'auth/login';
-
 function Login() {
   const { setAuth } = useContext(AuthContext);
-
   const userRef = useRef();
   const errRef = useRef();
-
   const navigate = useNavigate();
   const location = useLocation();
   const from = location.state?.from?.pathname || '/';
-
   const [email, setEmail] = useState('');
   const [pwd, setPwd] = useState('');
   const [errMsg, setErrMsg] = useState('');
-
   useEffect(() => {
     userRef.current.focus();
   }, []);
-
   useEffect(() => {
     setErrMsg('');
   }, [email, pwd]);
-
   const handleSubmit = async (e) => {
     e.preventDefault();
     const formData = {
@@ -43,11 +35,9 @@ function Login() {
         headers: { 'Content-Type': 'application/json' },
         Accept: '*/*',
       });
-
       const authToken = res.headers.authorization;
       const { role } = res.data.data;
       const username = res.data.data.name;
-
       const { id } = res.data.data;
       setAuth({
         role,
@@ -76,7 +66,6 @@ function Login() {
       errRef.current.focus();
     }
   };
-
   return (
     <section className="rounded-1 login-register-style">
       <p
@@ -86,40 +75,43 @@ function Login() {
       >
         {errMsg}
       </p>
-      <h1 className="header">Sign In</h1>
-      <form onSubmit={handleSubmit} className="">
-        <label htmlFor="email">Email:</label>
-        <input
-          type="email"
-          id="email"
-          ref={userRef}
-          value={email}
-          onChange={(e) => setEmail(e.target.value)}
-          autoComplete="on"
-          required
-        />
-        <label htmlFor="password">Password:</label>
-        <input
-          type="password"
-          id="password"
-          value={pwd}
-          onChange={(e) => setPwd(e.target.value)}
-          autoComplete="on"
-          required
-        />
-        <button type="submit" className="btn-color text-light">
-          Sign In
-        </button>
-      </form>
-      <p className="sign-in-p">
-        Need an Account?
-        <br />
-        <Link to="/register" className="text-light">
-          <span className="text-login">Sign Up</span>
-        </Link>
-      </p>
+      <div className="register-content">
+        <h1 className="header">Sign In</h1>
+        <form onSubmit={handleSubmit} className="">
+          <label htmlFor="email"></label>
+          <input
+            type="email"
+            id="email"
+            ref={userRef}
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+            autoComplete="on"
+            placeholder="Email"
+            required
+          />
+          <label htmlFor="password"></label>
+          <input
+            type="password"
+            id="password"
+            value={pwd}
+            onChange={(e) => setPwd(e.target.value)}
+            autoComplete="on"
+            placeholder="Password"
+            required
+          />
+          <button type="submit" className="btn-color text-light">
+            Sign In
+          </button>
+        </form>
+        <p className="sign-in-p">
+          Need an Account?
+          <br />
+          <Link to="/register" className="text-light go-sign">
+            Sign Up
+          </Link>
+        </p>
+      </div>
     </section>
   );
 }
-
 export default Login;
