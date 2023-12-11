@@ -43,6 +43,5 @@ const reservationsSlice = createSlice({
   },
 });
 
-
 export const getAllReservations = (state) => state.reservations.reservations;
 export default reservationsSlice.reducer;
