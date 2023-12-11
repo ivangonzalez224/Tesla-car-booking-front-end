@@ -3,6 +3,10 @@ import { useNavigate, Link, useLocation } from 'react-router-dom';
 import { toast } from 'react-hot-toast';
 import axios from 'axios';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+// eslint-disable-next-line import/no-extraneous-dependencies
+import {
+  FaTwitter, FaFacebookF, FaVimeoV, FaPinterestP,
+} from 'react-icons/fa6';
 import { faBars } from '@fortawesome/free-solid-svg-icons';
 import useAuth from '../hooks/seAuth';
 import logo from '../assets/logo.png';
@@ -12,20 +16,16 @@ function Navbar() {
   const location = useLocation();
   const { setAuth } = useAuth();
   const navigate = useNavigate();
-
   const { authToken, role } = JSON.parse(localStorage.getItem('Token')) || {};
   const toggleSidebar = () => {
     setSidebarVisible(!sidebarVisible);
   };
-
   const closeSidebar = () => {
     setSidebarVisible(false);
   };
-
   const handleLogout = async () => {
     setAuth({});
     localStorage.removeItem('Token');
-
     try {
       if (authToken) {
         await axios.delete('http://localhost:3000/auth/logout', {
@@ -40,11 +40,9 @@ function Navbar() {
       // Display an error message to the user
       toast.error('Oops! Failed to logout');
     }
-
     // Regardless of success or failure, navigate to the login page
     navigate('/login');
   };
-
   return (
     <>
       <div className="mob-nav">
@@ -68,12 +66,18 @@ function Navbar() {
             disabled={!authToken}
             onClick={handleLogout}
             type="button"
-            className="list-group-item list-group-item-action"
+            className="list-group-item list-group-item-action nav-logout"
           >
             Log Out
           </button>
         </div>
         <div className="license-container">
+          <div className="nav-icons">
+            <FaTwitter />
+            <FaFacebookF />
+            <FaVimeoV />
+            <FaPinterestP />
+          </div>
           <p className="license">&copy; 2023 Tesla Cars booking</p>
           <p className="license">All rights reserved.</p>
         </div>
@@ -81,5 +85,4 @@ function Navbar() {
     </>
   );
 }
-
 export default Navbar;

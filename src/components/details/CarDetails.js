@@ -22,7 +22,6 @@ function CarDetails() {
     <>
       <Navbar />
       <div className="details-all-page">
-        <h2 className="headerDetails">Car Details</h2>
         {carDetails.isLoading ? (
           <p>Loading...</p>
         ) : (
@@ -36,9 +35,7 @@ function CarDetails() {
               <p>Option to Purchase: {carDetails.option_to_purchase}</p>
               <p>Total Amount Payable: {carDetails.total_amount_payable}</p>
               <p>Duration: {carDetails.duration} months</p>
-              <p>Description: {carDetails.description}</p>
-              <Link to={`/reserveDetails/${carId}`}> Reserved </Link>
-              {/* Reserved Button - Link to the Reserve Page */}
+              <Link to={`/reserveDetails/${carId}`}> Reserve </Link>
             </div>
           </div>
         )}
