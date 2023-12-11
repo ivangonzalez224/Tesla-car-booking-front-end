@@ -21,24 +21,22 @@ function CarDetails() {
   return (
     <>
       <Navbar />
-      <div>
-        <h2 className="headerDetails">Car Details</h2>
+      <div className="details-all-page">
         {carDetails.isLoading ? (
           <p>Loading...</p>
         ) : (
           <div className="Details">
             <img src={carDetails.image} alt={carDetails.name} />
-            <h3>{carDetails.name}</h3>
-            <p>Color: {carDetails.color}</p>
-            <p>Year: {carDetails.year}</p>
-            <p>Finance Fee: {carDetails.finance_fee}</p>
-            <p>Option to Purchase: {carDetails.option_to_purchase}</p>
-            <p>Total Amount Payable: {carDetails.total_amount_payable}</p>
-            <Link to={`/reserveDetails/${carId}`}> Reserved </Link>
-            <p>Duration: {carDetails.duration} months</p>
-            <p>Description: {carDetails.description}</p>
-            {/* Reserved Button - Link to the Reserve Page */}
-
+            <div className="all-details">
+              <h3>{carDetails.name}</h3>
+              <p>Color: {carDetails.color}</p>
+              <p>Year: {carDetails.year}</p>
+              <p>Finance Fee: {carDetails.finance_fee}</p>
+              <p>Option to Purchase: {carDetails.option_to_purchase}</p>
+              <p>Total Amount Payable: {carDetails.total_amount_payable}</p>
+              <p>Duration: {carDetails.duration} months</p>
+              <Link to={`/reserveDetails/${carId}`}> Reserve </Link>
+            </div>
           </div>
         )}
       </div>

@@ -2,7 +2,7 @@
 
 :root {
   --basic-text-color: #000;
-  --basic-blue-color: #1a237e;
+  --basic-green-color: #97c004;
 }
 
 body {
@@ -48,20 +48,24 @@ html {
   color: #000;
 }
 
-section {
-  margin-top: 70px;
-  width: 100%;
-  max-width: 420px;
-  min-height: 400px;
+.register-content {
+  width: 50%;
+  background-color: #fff;
   display: flex;
   flex-direction: column;
-  justify-content: flex-start;
-  padding: 0 1rem;
+  padding: 2% 3%;
+  border-radius: 11px;
 }
 
 .login-register-style {
-  background: rgba(0, 86, 143, 0.5);
-  color: #fff;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: #97c004;
+  color: #000;
 }
 
 form {
@@ -72,11 +76,15 @@ form {
   padding-bottom: 1rem;
 }
 
+.go-sign {
+  text-decoration: none;
+  color: var(--basic-green-color);
+}
+
 /* a,
 a:visited {
   color: #fff;
 } */
-
 input[type='text'],
 input[type='email'],
 input[type='password'],
@@ -86,7 +94,7 @@ textarea {
   font-size: 22px;
   padding: 0.25rem;
   border-radius: 0.5rem;
-  border: 1px solid var(--basic-blue-color);
+  border: 1px solid var(--basic-green-color);
 }
 
 label,
@@ -96,6 +104,24 @@ button {
 
 button {
   padding: 0.5rem;
+  cursor: pointer;
+}
+
+.nav-logout {
+  background-color: #2f2c2c;
+  color: #fff;
+  cursor: pointer;
+  font-size: 19px;
+  padding: 4% 8%;
+  border: none;
+}
+
+.nav-icons {
+  width: 100%;
+  display: flex;
+  justify-content: flex-start;
+  gap: 5%;
+  margin-bottom: 10%;
 }
 
 .instructions {
@@ -180,14 +206,15 @@ button {
 
 @media (max-width: 768px) {
   section {
-    margin-top: 20px;
-    width: 100%;
-    max-width: 420px;
-    min-height: 400px;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
     padding: 1rem;
+  }
+
+  .login-register-style {
+    background-color: #fff;
+  }
+
+  .register-content {
+    width: 90%;
   }
 
   .skeleton-img {
@@ -222,19 +249,20 @@ button {
 }
 
 .border-color {
-  border: 1px solid var(--basic-blue-color);
+  border: 1px solid var(--basic-green-color);
 }
 
 .btn-color {
-  background: var(--basic-blue-color);
+  background: #97c004;
+  color: white;
 }
 
 .text-color {
-  color: var(--basic-blue-color);
+  color: var(--basic-green-color);
 }
 
 .text-login {
-  color: #d8d8df;
+  color: #fff;
 }
 
 .skeleton {
@@ -311,7 +339,6 @@ button {
 }
 
 /* App.css styles */
-
 .App {
   text-align: center;
 }
@@ -361,7 +388,6 @@ button {
 }
 
 /* Navbar styles */
-
 .sidebar-logo-container {
   width: 150px;
   height: 150px;
@@ -400,7 +426,7 @@ button {
 .main-page-container,
 .reservation-page-container,
 .login-page-container,
-.details-page {
+.details-all-page {
   width: 80%;
 }
 
@@ -414,7 +440,7 @@ button {
 }
 
 .nav-link {
-  font-size: 22px;
+  font-size: 17px;
   font-weight: 700;
   text-decoration: none;
   color: var(--basic-text-color);
@@ -425,12 +451,10 @@ button {
 }
 
 .license-container {
+  width: 80%;
   display: flex;
   flex-direction: column;
-  width: 100%;
-  bottom: 15px;
-  right: -30px;
-  position: fixed;
+  align-items: flex-start;
 }
 
 .license {
@@ -450,7 +474,6 @@ button {
 }
 
 /* Details page started */
-
 .details-page {
   display: flex;
   justify-content: space-between;
@@ -544,7 +567,8 @@ button {
 
   .Add-car-container,
   .delete-car-container,
-  /* .main-page-container, */
+  .main-page-container,
+  .details-all-page,
   .reservation-page-container,
   .login-page-container {
     width: 100%;
