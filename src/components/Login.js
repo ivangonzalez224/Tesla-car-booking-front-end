@@ -52,7 +52,7 @@ function Login() {
       );
       setEmail('');
       setPwd('');
-      navigate(from, { replace: true });
+      navigate("/mainPage");
     } catch (err) {
       if (!err?.response) {
         setErrMsg('No Server Response');

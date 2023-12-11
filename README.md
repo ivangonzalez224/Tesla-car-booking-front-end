@@ -116,25 +116,25 @@ To run the project, do the following:
 
 👤 **Ali Baba Hussaini**
 
-GitHub: [@Alibaba2023](https://github.com/Alibaba2023/)
-LinkedIn [Alibaba Hussaini](https://www.linkedin.com/in/ali-baba-hussaini-630607267/)
+- GitHub: [@Alibaba2023](https://github.com/Alibaba2023/)
+- LinkedIn [Alibaba Hussaini](https://www.linkedin.com/in/ali-baba-hussaini-630607267/)
 
 👤 **Hafizullah Rasa**
 
-GitHub: [Hafiz Rasa](https://github.com/hafiz1379)
-LinkedIn: [Hafiz Rasa](https://www.linkedin.com/in/hafiz1379/)
+- GitHub: [Hafiz Rasa](https://github.com/hafiz1379)
+- LinkedIn: [Hafiz Rasa](https://www.linkedin.com/in/hafiz1379/)
 
 👤 **Bruno Kambere**
 
-GitHub: [@kambereBr](https://github.com/kambereBr)
-Twitter: [@kambereBr](https://twitter.com/kambereBr)
-LinkedIn: [bruno kambere](https://www.linkedin.com/in/bruno-kambere-399447138/)
+- GitHub: [@kambereBr](https://github.com/kambereBr)
+- Twitter: [@kambereBr](https://twitter.com/kambereBr)
+- LinkedIn: [bruno kambere](https://www.linkedin.com/in/bruno-kambere-399447138/)
 
 👤 **steven wafeek**
 
-GitHub: [StevenWafeek](https://github.com/StevenWafeek)
-Twitter: [steven_hakeem](https://twitter.com/steven_hakeem)
-LinkedIn: [steven wafeek](https://www.linkedin.com/in/steven-wafeek-b629341b6/)
+- GitHub: [StevenWafeek](https://github.com/StevenWafeek)
+- Twitter: [steven_hakeem](https://twitter.com/steven_hakeem)
+- LinkedIn: [steven wafeek](https://www.linkedin.com/in/steven-wafeek-b629341b6/)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
