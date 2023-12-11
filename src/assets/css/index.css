@@ -49,18 +49,17 @@ html {
 }
 
 section {
-  margin-top: 70px;
+  color: #fff;
   width: 100%;
-  max-width: 420px;
-  min-height: 400px;
   display: flex;
   flex-direction: column;
-  justify-content: flex-start;
+  align-items: center;
+  height: 100%;
   padding: 0 1rem;
 }
 
 .login-register-style {
-  background: rgba(0, 86, 143, 0.5);
+  background: rgb(36 221 4 / 50%);
   color: #fff;
 }
 
@@ -180,13 +179,13 @@ button {
 
 @media (max-width: 768px) {
   section {
-    margin-top: 20px;
+    /* margin-top: 20px;
     width: 100%;
     max-width: 420px;
     min-height: 400px;
     display: flex;
     flex-direction: column;
-    justify-content: flex-start;
+    justify-content: flex-start; */
     padding: 1rem;
   }
 
@@ -226,7 +225,8 @@ button {
 }
 
 .btn-color {
-  background: var(--basic-blue-color);
+  background: #97c004;
+  color: white;
 }
 
 .text-color {
@@ -234,7 +234,7 @@ button {
 }
 
 .text-login {
-  color: #d8d8df;
+  color: #fff;
 }
 
 .skeleton {
