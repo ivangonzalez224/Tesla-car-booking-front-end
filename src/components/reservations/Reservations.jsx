@@ -18,7 +18,7 @@ function Reservations() {
     <>
       <Navbar />
       <div className="delete-cars-container">
-        <h3 id="deleteTitle">Reservation List</h3>
+        <h3 id="deleteTitle">My Reservations</h3>
         <table>
           <thead>
             <tr>
