@@ -30,7 +30,8 @@
   font-size: 15px;
 }
 
-.react-multiple-carousel__arrow--right, .react-multiple-carousel__arrow--left {
+.react-multiple-carousel__arrow--right,
+.react-multiple-carousel__arrow--left {
   background-color: #87de15;
   border-radius: 50%;
   color: white;
