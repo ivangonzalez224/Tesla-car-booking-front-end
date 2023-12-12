@@ -73,8 +73,9 @@
     box-shadow: none;
     border: 0;
   }
+
   .image-container {
     width: 70%;
     align-self: center;
-}
+  }
 }
