@@ -1,3 +1,4 @@
+/* eslint-disable react/function-component-definition */
 import React, { useState } from 'react';
 import { useNavigate, Link, useLocation } from 'react-router-dom';
 import { toast } from 'react-hot-toast';
@@ -11,7 +12,7 @@ import { faBars } from '@fortawesome/free-solid-svg-icons';
 import useAuth from '../hooks/seAuth';
 import logo from '../assets/logo.png';
 
-function Navbar() {
+const Navbar = () => {
   const [sidebarVisible, setSidebarVisible] = useState(false);
   const location = useLocation();
   const { setAuth } = useAuth();
@@ -84,5 +85,5 @@ function Navbar() {
       </div>
     </>
   );
-}
+};
 export default Navbar;
