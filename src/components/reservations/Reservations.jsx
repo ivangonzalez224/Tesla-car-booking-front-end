@@ -1,10 +1,11 @@
+/* eslint-disable react/function-component-definition */
 import React, { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import Navbar from '../Navbar';
 import { fetchReservations } from '../../redux/features/reservationsSlice';
 import '../../assets/css/deleteCar.css';
 
-function Reservations() {
+const Reservations = () => {
   const dispatch = useDispatch();
   const { id } = JSON.parse(localStorage.getItem('Token')) || {};
 
@@ -47,6 +48,6 @@ function Reservations() {
       </div>
     </>
   );
-}
+};
 
 export default Reservations;

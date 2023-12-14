@@ -1,3 +1,4 @@
+/* eslint-disable react/function-component-definition */
 import { React, useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import Carousel from 'react-multi-carousel';
@@ -8,7 +9,7 @@ import CarItem from './CarItem';
 import 'react-multi-carousel/lib/styles.css';
 import '../../assets/css/carouselStyle.css';
 
-function MainPage() {
+const MainPage = () => {
   const dispatch = useDispatch();
   const { cars } = useSelector((state) => state.cars);
   const { cityItems } = useSelector((store) => store.cities);
@@ -67,6 +68,6 @@ function MainPage() {
       </div>
     </>
   );
-}
+};
 
 export default MainPage;

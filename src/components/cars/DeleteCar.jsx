@@ -1,10 +1,11 @@
+/* eslint-disable react/function-component-definition */
 import React from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { carRemoved, updateCars } from '../../redux/features/carsSlice';
 import Navbar from '../Navbar';
 import '../../assets/css/deleteCar.css';
 
-function DeleteCar() {
+const DeleteCar = () => {
   const dispatch = useDispatch();
   const { id } = JSON.parse(localStorage.getItem('Token')) || {};
   const { cars } = useSelector((state) => state.cars);
@@ -51,6 +52,6 @@ function DeleteCar() {
       </div>
     </>
   );
-}
+};
 
 export default DeleteCar;

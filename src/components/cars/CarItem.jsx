@@ -1,10 +1,11 @@
+/* eslint-disable react/function-component-definition */
 import React from 'react';
 import PropTypes from 'prop-types';
 import { useDispatch } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 import { fetchCarById } from '../../redux/features/carsSlice';
 
-function CarItem({ car, classNames }) {
+const CarItem = ({ car, classNames }) => {
   const { id } = JSON.parse(localStorage.getItem('Token')) || {};
   const dispatch = useDispatch();
   const navigate = useNavigate();
@@ -35,7 +36,7 @@ function CarItem({ car, classNames }) {
       </button>
     </li>
   );
-}
+};
 
 CarItem.propTypes = {
   car: PropTypes.shape({
