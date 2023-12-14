@@ -29,7 +29,7 @@ const Navbar = () => {
     localStorage.removeItem('Token');
     try {
       if (authToken) {
-        await axios.delete('http://localhost:3000/auth/logout', {
+        await axios.delete('https://tesla-car-booking-q0hb.onrender.com/auth/logout', {
           headers: {
             Authorization: authToken,
             'Content-Type': 'application/json',
