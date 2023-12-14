@@ -1,0 +1,77 @@
+.add-car-container {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+}
+
+.add-car-card {
+  width: 80%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+#add-car-title {
+  color: #000;
+}
+
+.card-body {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  margin-top: 9%;
+}
+
+.mb-2 {
+  width: 100%;
+  margin-bottom: 3%;
+  display: flex;
+}
+
+.mb-d {
+  width: 100%;
+  margin-bottom: 3%;
+  display: flex;
+  justify-content: flex-end;
+}
+
+input,
+textarea {
+  width: 100%;
+}
+
+.mb-2 input.form-control,
+.mb-2 textarea.form-control {
+  font-size: 17px;
+}
+
+.add-car-twoInput {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.input-half {
+  width: 95%;
+}
+
+.add-car-twoInput input {
+  font-size: 17px;
+}
+
+.add-car-btn {
+  width: 100%;
+}
+
+@media screen and (min-width: 768px) {
+  .div-textarea {
+    margin-bottom: 1%;
+  }
+
+  .card-body {
+    margin-top: 3%;
+  }
+}

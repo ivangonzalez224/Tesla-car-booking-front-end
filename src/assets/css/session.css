@@ -1,0 +1,70 @@
+.session-container {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  color: #000;
+  font-family: 'Nunito', sans-serif;
+  align-items: center;
+  justify-content: center;
+}
+
+.session-content {
+  width: 80%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+#sesion-title {
+  width: 100%;
+  text-align: center;
+}
+
+.session-logo-container {
+  margin: 10% 0;
+  width: 45%;
+}
+
+.session-logo {
+  width: 100%;
+}
+
+.session-btns {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.session_btn {
+  width: 100%;
+  background-color: limegreen;
+  text-decoration: none;
+  color: #000;
+  margin-bottom: 5%;
+  padding: 1% 2%;
+  border-radius: 11px;
+  text-align: center;
+}
+
+@media screen and (min-width: 768px) {
+  .session-content {
+    width: 70%;
+  }
+
+  .session-logo-container {
+    margin: 5% 0;
+    width: 25%;
+  }
+
+  .session-logo {
+    width: 100%;
+  }
+
+  .session_btn {
+    width: 70%;
+    margin-bottom: 2%;
+  }
+}

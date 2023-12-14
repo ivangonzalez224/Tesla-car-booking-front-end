@@ -1,70 +1,223 @@
-# Getting Started with Create React App
+<a name="readme-top"></a>
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+<div align="center">
 
-## Available Scripts
+  <h2><b>Tesla Car Booking Frontend</b></h2>
+  <h4>Ivan Gonzalez & Bruno Kambere & Ali Baba & Hafiz Rasa & Steven Wafeek</h4>
 
-In the project directory, you can run:
+</div>
 
-### `npm start`
+<!-- TABLE OF CONTENTS -->
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+# 📗 Table of Contents
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+- [📖 About the Project](#about-project)
+  - [🔗 Link to Backend Rails app](#link-backend)
+  - [Kanban borad](#kanban-baord)
+    - [🚀 Live Demo](#live-demo)
+  - [🛠 Built With](#built-with)
+    - [Tech Stack](#tech-stack)
+    - [Key Features](#key-features)
+- [💻 Getting Started](#getting-started)
+  - [Prerequisites](#prerequisites)
+  - [Setup](#setup)
+  - [Install](#install)
 
-### `npm test`
+- [👥 Authors](#authors)
+- [🔭 Future Features](#future-features)
+- [🤝 Contributing](#contributing)
+- [⭐️ Show your support](#support)
+- [🙏 Acknowledgements](#acknowledgements)
+- [📝 License](#license)
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+<!-- PROJECT DESCRIPTION -->
 
-### `npm run build`
+# 📖 Tesla Car Booking Frontend <a name="about-project"></a>
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+**Tesla Car Booking Frontend** is the front-end app that provides a user interface for booking Tesla cars test drives. This app is integrated with the back end Ruby on Rails API app linked below.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## 💻 Link to back end Rails app <a name="link-backend"></a>
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+The link to the Rails app:
 
-### `npm run eject`
+- [Rails app link](https://github.com/hafiz1379/Tesla-car-booking-back-end)
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+<!--Kanban board -->
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## Kanban board <a name="kanban_board"></a>
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+Our project utilizes a Kanban board to visualize and manage tasks throughout the development process. The board is divided into several columns representing different stages of the workflow. Each task is represented by a card that can be moved between columns as it progresses.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+### Columns:
 
-## Learn More
+- **To Do**: Tasks planned for the current or upcoming sprints.
+- **In Progress**: Tasks that are actively being worked on.
+- **Review**: Tasks that are completed and awaiting review.
+- **Done**: Tasks that have been completed and implemented.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+- [Kanban board link](https://github.com/users/ivangonzalez224/projects/9)
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+- The initial state of Kanban board
+  <img src='src/assets/286696384-4dbde003-cfed-492a-8901-dde0d69ec01a.png' />
 
-### Code Splitting
+- Final Team Size: 5 members
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-### Analyzing the Bundle Size
+## 🚀 Live Demo <a name="live-demo"></a>
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+ The link to the project deployed:
 
-### Making a Progressive Web App
+- [Live Demo api link](https://tesla-car-booking-q0hb.onrender.com)
+- [Live Demo front end app link](https://tesla-car-booking-front.onrender.com)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-### Advanced Configuration
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+## 🛠 Built With <a name="built-with"></a>
 
-### Deployment
+### Tech Stack <a name="tech-stack"></a>
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+<details>
+  <summary>Client</summary>
+  <ul>
+    <li><a href="https://react.dev/">React</a></li>
+    <li><a href="https://redux.js.org/">Redux</a></li>
+    <li><a href="https://developer.mozilla.org/es/docs/Web/CSS">CSS</a></li>
+  </ul>
+</details>
 
-### `npm run build` fails to minify
+<!-- Features -->
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+### Key Features <a name="key-features"></a>
+
+- **Add React Router for Navigation**
+- **Add the Redux State Management**
+- **Components for navigation panel, user and reservation forms, main page, details page**
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+
+<!-- GETTING STARTED -->
+
+## 💻 Getting Started <a name="getting-started"></a>
+
+In this project it is used React to build a Tesla Car booking mobile and desktop web app.
+
+### Prerequisites
+
+In order to run this project you need:
+
+1. Git.
+2. Visual Studio Code or another code editor.
+3. Browser.
+
+### Setup
+
+To get a local copy, follow these steps.
+
+Clone this repository to your desired folder:
+
+```sh
+  cd my-folder
+  git clone https://github.com/ivangonzalez224/Tesla-car-booking-front-end.git
+```
+
+### Install
+
+This project does not require installation. Just clone the repository to your local machine.
+Even though, for general purposes, Install this project with:
+```sh
+  cd my-folder
+  npm install
+```
+
+### Usage
+
+To run the project, do the following:
+- Run `npm start` to open the project in your browser.
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+<!-- AUTHORS -->
+
+## 👥 Authors <a name="authors"></a>
+
+👤 **Iván Gonzalez**
+
+- GitHub: [@ivangonzalez224](https://github.com/ivangonzalez224)
+- Twitter: [@Ivan Gonzalez](https://twitter.com/ivang2204)
+- LinkedIn: [Iván Gonzalez Robles](https://www.linkedin.com/in/iván-gonzalez-robles-957491275/)
+
+👤 **Ali Baba Hussaini**
+
+- GitHub: [@Alibaba2023](https://github.com/Alibaba2023/)
+- LinkedIn [Alibaba Hussaini](https://www.linkedin.com/in/ali-baba-hussaini-630607267/)
+
+👤 **Hafizullah Rasa**
+
+- GitHub: [Hafiz Rasa](https://github.com/hafiz1379)
+- LinkedIn: [Hafiz Rasa](https://www.linkedin.com/in/hafiz1379/)
+
+👤 **Bruno Kambere**
+
+- GitHub: [@kambereBr](https://github.com/kambereBr)
+- Twitter: [@kambereBr](https://twitter.com/kambereBr)
+- LinkedIn: [bruno kambere](https://www.linkedin.com/in/bruno-kambere-399447138/)
+
+👤 **steven wafeek**
+
+- GitHub: [StevenWafeek](https://github.com/StevenWafeek)
+- Twitter: [steven_hakeem](https://twitter.com/steven_hakeem)
+- LinkedIn: [steven wafeek](https://www.linkedin.com/in/steven-wafeek-b629341b6/)
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+<!-- FUTURE FEATURES -->
+
+## 🔭 Future Features <a name="future-features"></a>
+
+- [ ] **A page for user profile management.**
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+<!-- CONTRIBUTING -->
+
+## 🤝 Contributing <a name="contributing"></a>
+
+Contributions, issues, and feature requests are welcome!
+
+Feel free to check the [issues page](https://github.com/ivangonzalez224/Tesla-car-booking-front-end/issues).
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+<!-- SUPPORT -->
+
+## ⭐️ Show your support <a name="support"></a>
+
+If you like this project please leave a star!
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+<!-- ACKNOWLEDGEMENTS -->
+
+## 🙏 Acknowledgments <a name="acknowledgements"></a>
+
+I would like to thank Microverse.
+
+<h3><b>Attribution</b></h3>
+
+- Title: Creative Commons
+- Author: [Murat Korkmaz](https://www.behance.net/muratk)
+- Source: https://www.behance.net/gallery/26425031/Vespa-Responsive-Redesign
+- License: https://creativecommons.org/licenses/by-nc/4.0/
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+<!-- LICENSE -->
+
+## 📝 License <a name="license"></a>
+
+This project is [MIT](./LICENSE) licensed.
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>

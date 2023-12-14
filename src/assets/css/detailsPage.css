@@ -1,0 +1,132 @@
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.headerDetails {
+  color: #87de15;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.details-all-page {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.Details {
+  color: #333;
+  padding: 20px;
+  margin-top: 20px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 20px;
+  width: 100%;
+}
+
+.Details h3 {
+  color: black;
+  margin-bottom: 10px;
+  width: 100%;
+}
+
+.Details p {
+  color: #141414;
+  padding: 7px;
+  margin: 5px 0;
+  transition: transform 0.1s ease-in-out;
+}
+
+.all-details {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  font-size: small;
+  width: 33%;
+  margin-left: 8%;
+}
+
+.all-details p:nth-child(even) {
+  background-color: #e2e3e5;
+}
+
+.all-details p:nth-child(odd) {
+  background-color: white;
+}
+
+.Details p:hover {
+  transform: scale(1.06);
+}
+
+.Details img {
+  width: 55%;
+  max-height: 380px;
+  margin-top: 20px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+}
+
+.Details a {
+  height: auto;
+  width: fit-content;
+  font-size: 15px;
+  margin-right: 5px;
+  padding: 3% 6%;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  border-radius: 44px;
+  border: 1px solid #e3e3e3;
+  background-color: #97c004;
+  color: white;
+  text-decoration: none;
+  align-self: end;
+  position: relative;
+  overflow: hidden;
+  margin-top: 10%;
+  font-weight: bold;
+  transition: transform 0.3s ease-in-out;
+}
+
+.Details a::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to right, transparent, rgba(255, 255, 255, 0.5), transparent);
+  transition: transform 0.3s ease-in-out;
+}
+
+.Details a:hover {
+  transform: translateX(6%);
+}
+
+.Details a:hover::before {
+  transform: translateX(100%);
+}
+
+@media (max-width: 768px) {
+  .Details {
+    flex-direction: column;
+    box-shadow: none;
+    margin-top: 0;
+  }
+
+  .all-details {
+    width: 100%;
+    margin-left: 0;
+  }
+
+  .Details a {
+    margin-top: 3%;
+  }
+
+  .details-all-page {
+    height: 100%;
+  }
+}
