@@ -55,10 +55,10 @@ Our project utilizes a Kanban board to visualize and manage tasks throughout the
 - **Review**: Tasks that are completed and awaiting review.
 - **Done**: Tasks that have been completed and implemented.
 
-- [Kanban board link:](https://github.com/users/ivangonzalez224/projects/9)
+- [Kanban board link](https://github.com/users/ivangonzalez224/projects/9)
 
 - The initial state of Kanban board
-  <img src='app/assets/images/286696384-4dbde003-cfed-492a-8901-dde0d69ec01a.png' />
+  <img src='src/assets/286696384-4dbde003-cfed-492a-8901-dde0d69ec01a.png' />
 
 - Final Team Size: 5 members
 
