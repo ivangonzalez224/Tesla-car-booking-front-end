@@ -70,7 +70,7 @@ function ReserveDetails() {
     };
 
     try {
-      const response = await fetch(`http://localhost:3000/api/v1/users/${id}/reservations`, {
+      const response = await fetch(`https://tesla-car-booking-q0hb.onrender.com/api/v1/users/${id}/reservations`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

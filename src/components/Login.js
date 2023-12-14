@@ -5,7 +5,7 @@ import React, {
 import { Link, useNavigate, useLocation } from 'react-router-dom';
 import axios from '../api/axios';
 import AuthContext from '../context/AuthProvider';
-const LOGIN_URL = 'auth/login';
+const LOGIN_URL = 'https://tesla-car-booking-q0hb.onrender.com/auth/login';
 function Login() {
   const { setAuth } = useContext(AuthContext);
   const userRef = useRef();
